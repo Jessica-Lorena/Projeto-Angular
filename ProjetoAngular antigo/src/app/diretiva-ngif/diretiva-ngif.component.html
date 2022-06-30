@@ -1,24 +1,14 @@
-<h5>*ngIf</h5>
-<div *ngIf="cursos.length > 0">
-    Lista de cursos aqui
-</div>
-<div **ngIf="cursos.length == 0">
-    Não há cursos para serem listados.
-</div>
+<nav class="navbar navbar-dark bg-primary">
+    <div class="nav navbar-nav">
+        <a class="nav-item nav-link"[class.ative] = "aba == 'home'" (click)="aba = 'home'">Home</a>
+        <a class="av-item nav-link"[class.ative] = "aba == 'mapa'" (click)="aba = 'mapa'">Mapa</a>
+        <a class="av-item nav-link"[class.ative] = "aba == 'lista'" (click)="aba = 'lista'">Lista</a>
+    </div>
+</nav>
 
-<div *ngIf="mostrarCursos">
-    Lista de cursos aqui
-</div>
-<div *ngIf="!mostrarCursos">
-    Não há cursos para serem listados.
-</div>
-<br>
-<button (click)="onMostrarCursos()">Mostrar ou esconder cursos</button>
+<div class="container" [ngSwitch]="aba">
+    <p *ngSwitchCase="'mapa'">Modo Mapa ativado</p>
+    <p *ngSwitchCase="'lista'">Modo Lista ativado</p>
+    <p *ngSwitchDefault="'home'">Home</p>
 
-<h5>hidden como alternativa</h5>
-<div [hidden]="!mostrarCursos">
-    Lista de cursos aqui
-</div>
-<div [hidden]="mostrarCursos">
-    Não há cursos para serem listados.
 </div>
