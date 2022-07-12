@@ -5,10 +5,3 @@
         <a class="av-item nav-link"[class.ative] = "aba == 'lista'" (click)="aba = 'lista'">Lista</a>
     </div>
 </nav>
-
-<div class="container" [ngSwitch]="aba">
-    <p *ngSwitchCase="'mapa'">Modo Mapa ativado</p>
-    <p *ngSwitchCase="'lista'">Modo Lista ativado</p>
-    <p *ngSwitchDefault="'home'">Home</p>
-
-</div>
