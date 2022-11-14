@@ -9,7 +9,7 @@ export class HighlightMouseDirective {
     this.backgroundColor = 'yellow';
   }
   @HostListener('mouseleave') onMouseLeave(){
-    this.backgroundColor = 'blue';
+    this.backgroundColor = 'white';
   }
 
   @HostBinding('style.backgroundColor') backgroundColor: string | undefined;
